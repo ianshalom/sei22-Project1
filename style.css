@@ -1,0 +1,115 @@
+body {
+	margin: 0;
+	padding: 9;
+	box-sizing: border-box;
+	max-width: 1000px;
+	background-image: url("./img/fruits.jpg");
+	background-size: 50%;
+	margin: 0 auto;
+	height: 1500px;
+}
+
+h1 {
+	font-family: 'Atma', serif;
+	font-size: 40px;
+}
+
+h2 {
+	font-family: 'Amatic SC', cursive;
+	font-weight: bolder;
+	font-size: 40px;
+}
+
+
+
+
+.background-image {
+	height: 1000px;
+	width: 400px;
+	background-image: cover;
+}
+
+
+
+.container-1, .container-2, .container-3, .container-4 {
+	background-color: #d4ebd0;
+	opacity: 0.8;
+	margin-top: 40px;
+}
+
+.container-1 {
+	height: 200px;
+	border-radius: 50%;
+	text-align: center;
+	padding-top: 2px;
+}
+
+.container-1 h1 {
+
+}
+
+.container-2 h1 {
+	text-align: center;
+	padding-top: 20px;
+
+}
+
+.container-2 {
+	height: 500px;
+}
+
+.recipe-container {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	align-items: stretch;
+	text-align: center;
+}
+
+.fruit-recipe{
+	margin: 0 auto;
+}
+
+.fruit-recipe ul {
+
+	text-align: center;
+	list-style: none;
+	text-decoration: none;
+	padding: 10px;
+}
+
+.fruit-recipe ul li {
+	padding: 10px;
+	font-family: 'Amatic SC', cursive;
+	font-size: 22px;
+	font-weight: bold;
+	line-height: 20px;
+	letter-spacing: 2px;
+}
+
+
+.container-4 {
+	height: 300px;
+	text-align: center;
+}
+
+.container-4 h1 {
+	padding-top: 18px;
+}
+
+.ingredients-list {
+	justify-content: flex-start;
+	align-items: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px 10px;
+
+}
+
+.ingredients {
+	padding: 15px 15px;
+	font-family: 'Amatic SC', cursive;
+	font-size: 22px;
+	letter-spacing: 2px;
+	font-weight: bold;
+}
