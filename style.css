@@ -2,11 +2,12 @@ body {
 	margin: 0;
 	padding: 9;
 	box-sizing: border-box;
-	max-width: 1000px;
+	max-width: 1200px;
 	background-image: url("./img/fruits.jpg");
 	background-size: 50%;
-	margin: 0 auto;
+	margin-left: 20px;
 	height: 1500px;
+	display: inline-block;
 }
 
 h1 {
@@ -20,42 +21,86 @@ h2 {
 	font-size: 40px;
 }
 
-
-
-
 .background-image {
 	height: 1000px;
 	width: 400px;
 	background-image: cover;
 }
 
-
+.container-1 .step-2 {
+	padding-bottom: 10px;
+	font-size: 20px;
+}
 
 .container-1, .container-2, .container-3, .container-4 {
 	background-color: #d4ebd0;
 	opacity: 0.8;
-	margin-top: 40px;
+	margin-top: 10px;
 }
 
 .container-1 {
-	height: 200px;
-	border-radius: 50%;
+	height: 300px;
 	text-align: center;
-	padding-top: 2px;
+	padding: 15px 15px 0;
+	width: 970px;
+	position: absolute;
 }
 
-.container-1 h1 {
+.instructions {
+	padding: 10px;
+}
 
+
+
+
+.container-2 {
+	height: 800px;
+	width: 350px;
+	text-align: center;
+	margin-top: 10px;
+	position: relative;
+	float: right;
+	left: 1020px;
+	visibility: collapse;
 }
 
 .container-2 h1 {
+	padding: 30px;
+}
+
+.ingredients-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.ingredients {
+	padding: 8px 8px;
+	font-family: 'Amatic SC', cursive;
+	font-size: 22px;
+	letter-spacing: 2px;
+	font-weight: bolder;
 	text-align: center;
-	padding-top: 20px;
 
 }
 
-.container-2 {
+
+
+
+.container-3 h1 {
+	text-align: center;
+	padding-top: 10px;
+
+}
+
+.container-3 {
 	height: 500px;
+	width: 1000px;
+	margin-top: 150px;
+	position: absolute;
+	right: 370px;
+	top: 170px;
+	opacity: 1;
 }
 
 .recipe-container {
@@ -71,7 +116,6 @@ h2 {
 }
 
 .fruit-recipe ul {
-
 	text-align: center;
 	list-style: none;
 	text-decoration: none;
@@ -85,31 +129,4 @@ h2 {
 	font-weight: bold;
 	line-height: 20px;
 	letter-spacing: 2px;
-}
-
-
-.container-4 {
-	height: 300px;
-	text-align: center;
-}
-
-.container-4 h1 {
-	padding-top: 18px;
-}
-
-.ingredients-list {
-	justify-content: flex-start;
-	align-items: stretch;
-	display: flex;
-	flex-wrap: wrap;
-	padding: 10px 10px;
-
-}
-
-.ingredients {
-	padding: 15px 15px;
-	font-family: 'Amatic SC', cursive;
-	font-size: 22px;
-	letter-spacing: 2px;
-	font-weight: bold;
 }
