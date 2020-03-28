@@ -32,7 +32,7 @@ h2 {
 	font-size: 20px;
 }
 
-.container-1, .container-2, .container-3, .container-4 {
+.container-1, .container-2, .container-3{
 	background-color: #d4ebd0;
 	opacity: 0.8;
 	margin-top: 10px;
@@ -129,4 +129,30 @@ h2 {
 	font-weight: bold;
 	line-height: 20px;
 	letter-spacing: 2px;
+}
+
+.container-4 {
+	position: absolute;
+	top: 230px;
+	height: 100px;
+	width: 300px;
+}
+
+.scoreboard {
+	text-align: center;
+}
+
+table {
+	margin: 0 auto;
+	padding: 10px;
+	border: 1px solid black
+
+}
+.row-header {
+	margin: 0 auto;
+}
+
+.score-count {
+	padding: 5px;
+	text-align: center;
 }

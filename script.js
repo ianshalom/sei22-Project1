@@ -11,6 +11,12 @@ var clickText;
 var gameStaging;
 var roundInSession = false;
 var ingredientsMatch = 0;
+var unsatisfiedCustomer = document.getElementById('unsatisfied-customer');
+var unsatisfiedCustomerCount = 0;
+var happyCustomers = document.getElementById('happy-customers');
+var happyCustomersCount = 0;
+
+
 
 
 
@@ -24,7 +30,7 @@ var drinkRecipe = [
 
     papaQueen = {
         name: 'Papaya Queen',
-        recipe: ['papaya', 'Banana', 'pineapple', 'milk', 'yogurt']
+        recipe: ['papaya', 'banana', 'pineapple', 'milk', 'yogurt']
     },
 
     merryBerry = {
@@ -108,8 +114,21 @@ var checkForMatch = function() {
 
     if(randomDrinkOption[0] === selectedIngredients[0] && randomDrinkOption[1] === selectedIngredients[1] && randomDrinkOption[2] === selectedIngredients[2] && randomDrinkOption[3] === selectedIngredients[3] && randomDrinkOption[4] === selectedIngredients[4]) {
         gameStaging.innerText = 'WELL DONE!';
+        selectedIngredients = [];
+        happyCustomersCount++;
+        happyCustomers.innerText = happyCustomersCount.toString();
+        gameStaging.addEventListener('click', randomGenerate);
+
+
+
+
+
     } else if (selectedIngredients.length >= 5) {
-        gameStaging.innerText = 'Wrong Order!';
+        gameStaging.innerText = 'Wrong Order! Click to continue on to next order.';
+        unsatisfiedCustomerCount++;
+        unsatisfiedCustomer.innerText = unsatisfiedCustomerCount.toString();
+        selectedIngredients = [];
+        gameStaging.addEventListener('click', randomGenerate);
     }
 
 
@@ -193,6 +212,7 @@ var beginGame = function(event) {
 
 //Callback function that brings to player the instructions and next step that will see the game being launched.
 var startGame = function(event) {
+
     var beginGameStep = document.createElement('p');
     beginGameStep.textContent = 'Click here to proceed';
     gameStaging = document.querySelector('.game-staging');
