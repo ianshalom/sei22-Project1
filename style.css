@@ -81,6 +81,7 @@ h2 {
 	letter-spacing: 2px;
 	font-weight: bolder;
 	text-align: center;
+	cursor: pointer;
 
 }
 
@@ -145,7 +146,7 @@ h2 {
 table {
 	margin: 0 auto;
 	padding: 10px;
-	border: 1px solid black
+	border: 3px solid black
 
 }
 .row-header {
@@ -155,4 +156,9 @@ table {
 .score-count {
 	padding: 5px;
 	text-align: center;
+}
+
+.row-header, .score-count {
+	font-family: 'Atma', serif;
+	font-size: 15px;
 }

@@ -11,10 +11,12 @@ var clickText;
 var gameStaging;
 var roundInSession = false;
 var ingredientsMatch = 0;
-var unsatisfiedCustomer = document.getElementById('unsatisfied-customer');
-var unsatisfiedCustomerCount = 0;
+var unsatisfiedCustomers = document.getElementById('unsatisfied-customer');
+var unsatisfiedCustomersCount = 0;
 var happyCustomers = document.getElementById('happy-customers');
 var happyCustomersCount = 0;
+var drinkIngredientCount = 0;
+var step = 0;
 
 
 
@@ -56,6 +58,7 @@ var selectedIngredients = [];
 var drinkName = [];
 var drinkIngredients = [];
 var randomDrinkOption;
+var drinkIngredientArray = [];
 
 
 
@@ -75,7 +78,7 @@ if(randomDrinkOption === selectedIngredients) {
         gameStaging.innerText = 'YOU HAVE TO DO BETTER!';
     }
     */
-
+var ingredientIndex = 0;
 
 var checkForMatch = function() {
 
@@ -109,56 +112,45 @@ var checkForMatch = function() {
         }
 
 
+       for(var i = 0; i < selectedIngredients.length; i++) {
+        if(randomDrinkOption.includes(selectedIngredients[i])) {
+            gameStaging.innerText = 'Correct ingredient, what is next?';
 
+            drinkIngredientCount++;
+            console.log(drinkIngredientCount + " COUNT");
 
+            if((drinkIngredientCount/3) === 5) {
+                gameStaging.innerText = 'Correct order! Click for your next order';
+                selectedIngredients = [];
+                drinkIngredientCount = 0;
+                happyCustomersCount++;
+                happyCustomers.innerText = happyCustomersCount.toString();
+                gameStaging.addEventListener('click', randomGenerate);
+            }
 
-    if(randomDrinkOption[0] === selectedIngredients[0] && randomDrinkOption[1] === selectedIngredients[1] && randomDrinkOption[2] === selectedIngredients[2] && randomDrinkOption[3] === selectedIngredients[3] && randomDrinkOption[4] === selectedIngredients[4]) {
-        gameStaging.innerText = 'WELL DONE!';
-        selectedIngredients = [];
-        happyCustomersCount++;
-        happyCustomers.innerText = happyCustomersCount.toString();
-        gameStaging.addEventListener('click', randomGenerate);
-
-
-
-
-
-    } else if (selectedIngredients.length >= 5) {
-        gameStaging.innerText = 'Wrong Order! Click to continue on to next order.';
-        unsatisfiedCustomerCount++;
-        unsatisfiedCustomer.innerText = unsatisfiedCustomerCount.toString();
-        selectedIngredients = [];
-        gameStaging.addEventListener('click', randomGenerate);
+        } else if (selectedIngredients.length >= 5) {
+                gameStaging.innerText = 'Wrong order. Don\'t worry, we\'ll bounce back. Click here for your next order.';
+                selectedIngredients = [];
+                drinkIngredientCount = 0;
+                unsatisfiedCustomersCount++;
+                unsatisfiedCustomers.innerText = unsatisfiedCustomersCount.toString();
+                gameStaging.addEventListener('click', randomGenerate);
+        } else {
+                gameStaging.innerText = 'Wrong ingredient. You need to focus!';
+        }
     }
-
-
-/*
-    console.log(selectedIngredients.length);
-    if(ingredientsMatch > 10) {
-        gameStaging.innerText = 'NICE JOB!';
-    } else if (selectedIngredients.length >= 5) {
-        gameStaging.innerText = 'WRONG ORDER!';
     }
-*/
-
-}
-
-
-
 
 
 var selectIngredients = function(event) {
 
     var ingredientsId = event.target.id;
     selectedIngredients.push(ingredientsId);
-
-
-
     instructions.innerText = '';
     checkForMatch();
 }
 
-
+//Function that randomly generates a drink order
 var generateDrinkOrder = function(array) {
 
         var drinkIndex = Math.floor(Math.random() * 5);
@@ -179,9 +171,7 @@ var generateDrinkOrder = function(array) {
 
 }
 
-
-
-
+//
 var randomGenerate = function(event) {
     console.log("Let's randomly generate you some orders!");
 
