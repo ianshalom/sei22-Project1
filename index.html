@@ -12,14 +12,31 @@
     <div class="container-1" id="display-board">
         <h1 class='instructions'>Click here to begin! </h1>
         <h1 class="game-staging"></h1>
-        <h1 class="random-generator"></h1>
-
-
 
     </div>
 
-    <!-- Ingredients Board -->s
-    <div class="container-2" id ="ingredients">
+    <!-- Score Count -->
+    <div class="container-2" id="table">
+        <table>
+            <tr class='scoreboard'>
+                <td class='row-header'>Unsatisfied Customers</td>
+                <td class='row-header'>Happy Customers</td>
+            </tr>
+            <tr>
+                <td class='score-count' id='unsatisfied-customer'>0</td>
+                <td class='score-count' id='happy-customers'>0</td>
+            </tr>
+        </table>
+
+        <div class="timer">
+            <h1 class="time"></h1>
+        </div>
+    </div>
+
+
+
+    <!-- Ingredients Board -->
+    <div class="container-3" id ="ingredients">
         <h1>Ingredients</h1>
 
 
@@ -66,103 +83,23 @@
         </div>
 
     <!-- Fruit Recipe -->
-    <div class="container-3" id="recipe">
+    <div class="container-4" id="recipe">
             <h1>Recipe </h1>
 
     <div class="recipe-container">
         <div class="fruit-recipe">
-            <h2>Avocado Honey</h2>
+            <h2 class="recipe-display"></h2>
             <ul>
-                <li>Avocado</li>
-                <li>Honey</li>
-                <li>Coconut</li>
-                <li>Milk</li>
-                <li>Ice Cream</li>
+                <li class="ingredient-display"></li>
+                <li class="ingredient-display"></li>
+                <li class="ingredient-display"></li>
+                <li class="ingredient-display"></li>
+                <li class="ingredient-display"></li>
             </ul>
         </div>
-    <div class="fruit-recipe">
-            <h2>Papaya Queen</h2>
-            <ul>
-                <li>Papaya</li>
-                <li>Banana</li>
-                <li>Pineapple</li>
-                <li>Milk</li>
-                <li>Yogurt</li>
-            </ul>
-        </div>
-    <div class="fruit-recipe">
-            <h2>Merry Berry</h2>
-            <ul>
-                <li>Blue Berry</li>
-                <li>Strawberry</li>
-                <li>Raspberry</li>
-                <li>Banana</li>
-                <li>Yogurt</li>
-            </ul>
-    </div>
-    <div class="fruit-recipe">
-            <h2>Tropical Breeze</h2>
-            <ul>
-                <li>Apple</li>
-                <li>Pineapple</li>
-                <li>Passion Fruit</li>
-                <li>Honey</li>
-                <li>Soda</li>
-            </ul>
-    </div>
-    <div class="fruit-recipe">
-            <h2>Melon Melon</h2>
-            <ul>
-                <li>Watermelon</li>
-                <li>Honeydew</li>
-                <li>Ice Cream</li>
-                <li>Lemon</li>
-                <li>Milk</li>
-            </ul>
     </div>
     </div>
-
-
-
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-
-
-    <!-- Score Count -->
-    <div class="container-4" id="table">
-        <table>
-            <tr class='scoreboard'>
-                <td class='row-header'>Unsatisfied Customers</td>
-                <td class='row-header'>Happy Customers</td>
-            </tr>
-            <tr>
-                <td class='score-count' id='unsatisfied-customer'>0</td>
-                <td class='score-count' id='happy-customers'>0</td>
-            </tr>
-        </table>
-    </div>
-
-
-
-
-
-
-
-
-
-
 <script type="text/javascript" scr="drinks.js"></script>
 <script type="text/javascript" src="script.js"></script>
 
